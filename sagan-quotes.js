@@ -1,9 +1,9 @@
 function generateQuote() {
   $.getJSON("./data/quotes.json", function(json){
     var randNum = 0;
-    var max = JSON.stringify(json.length-1);
+    var max = JSON.stringify(json.length);
     var min = 0;
-    randNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    randNum = Math.floor(Math.random() * (max - min)) + min;
     var html = '<em>"' + json[randNum].quote + '"</em> - ' + json[randNum].author;
     $(".quote").html(html);
   });
